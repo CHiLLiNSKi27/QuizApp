@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(131, 255, 193);
+
+}
+
+.bg-main{
+    background-color: rgb(0, 148, 74);
+}
+
+.quiz-card{
+    width: 30rem;
+}
+.container{
+    background-color: rgb(131, 255, 193);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-footer{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    padding-top:10px;
+}
+
+.quiz-answer-card:hover{
+    cursor: pointer;
+    background-color: rgba(131, 255, 193, 0.2);
+}
+
+.bg-success, .bg-danger {
+    color:white;
+}
+
+.width-50{
+    width: 50%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.again-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}

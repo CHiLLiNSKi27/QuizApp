@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz App</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+
 </head>
-<body>
-    <h1>Hallo Marcel</h1>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laudantium quos illum magni assumenda modi esse pariatur, saepe optio quo dignissimos minus similique. Voluptates aspernatur dolorem, corrupti reprehenderit officiis veritatis.
-    </p>
+<body onload="init()">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Quiz App</span>
+        </div>
+    </nav>
 
-    <button class="btn btn-primary">Action</button>
+    <div class="container">
+        <div class="card quiz-card">
+            <img id='header-image' src="/img/pencil.jpg" class="card-img-top">
 
-    hier ist ein <a href="#">link</a>
+            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100">
+                <div id='progress-bar' class="progress-bar progress-bar-striped bg-main progress-bar-animated"
+                    style="width: 100%"></div>
+            </div>
+
+            <div class="progress" role="progressbar" aria-label="Info striped example" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100">
+                <div id='progress-bar2' class="progress-bar progress-bar-striped bg-info progress-bar-animated"
+                    style="width: 100%"></div>
+            </div>
+
+            <div class="again-button card-body" id="endScreen" style="display: none;">
+                <div class="text-center">Quiz beendet!
+                </div>
+
+                <div class="text-center">
+                    Du hast <b id="right-questions">XX</b> von <b id="all-questions">xx</b> Fragen richtig beantwortet!
+                </div>
+
+                <button onclick="restartGame()" id="again-button" class="btn btn-dark">Quiz wiederholen
+                </button>
+            </div>
+
+            <div class="card-body" id="questionBody">
+                <h5 id="questiontext" class="card-title">Frage</h5>
+
+                <div class="card mb-2 quiz-answer-card" onclick="answer('answer_1')">
+                    <div id="answer_1" class="card-body">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 quiz-answer-card" onclick="answer('answer_2')">
+                    <div id="answer_2" class="card-body">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 quiz-answer-card" onclick="answer('answer_3')">
+                    <div id="answer_3" class="card-body">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="card mb-2 quiz-answer-card" onclick="answer('answer_4')">
+                    <div id="answer_4" class="card-body">
+                        Antwort
+                    </div>
+                </div>
+
+                <div class="question-footer">
+                    <span><b id="current-number-of-question">1</b> von <b id="number-of-questions">5</b> Fragen</span>
+
+                    <button onclick="nextQuestion()" disabled id="next-button" class="btn btn-dark">nächste
+                        Frage</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
